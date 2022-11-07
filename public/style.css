@@ -1,0 +1,354 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+body{
+  
+  word-wrap:break-word;
+  background-color: rgb(0, 0, 0);
+  font-family: 'Amatic SC', cursive;
+  font-size: 2rem;
+
+}
+
+.journalTitle {
+  list-style: none;
+}
+
+.messages {
+  list-style: none;
+}
+
+
+.row {
+  display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+/* .dreams {
+  display: flex;
+  justify-content: right;
+  padding: 0;
+} */
+
+.journalTitle {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+
+.entryJournal {
+  display: flex;
+  justify-content: right;
+}
+
+
+.home {
+  color: black;
+}
+
+.typewriter {
+  padding: 18px;
+  font-size: 23px;
+  border-width: 4px;
+  border-color: #6623ff;
+  background-image: url(img/strars2.gif);
+  color: #ffffff;
+  border-style: solid;
+  border-radius: 35px;
+}
+
+.jumbotron h1 {
+  color: black;
+}
+
+.messages {
+  color: white
+}
+
+.sleepHours {
+  padding: 18px;
+  font-size: 23px;
+  border-width: 4px;
+  border-color: #6623ff;
+  background-image: url(img/strars2.gif);
+  color: #ffff;
+  border-style: solid;
+  border-radius: 35px;
+}
+
+.page-header  {
+  background-image: url(img/meteors.gif);
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding-bottom: 6em;
+}
+
+
+h2 {
+  font-family: 'Amatic SC', cursive;
+
+}
+
+h3 {
+  font-family: 'Amatic SC', cursive;
+  font-size: 3.5rem;
+}
+
+
+form {
+  width: 100%;
+  margin: 0%;
+  box-sizing:border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-sm, .btn-xs {
+  padding: 10px 30px;
+    font-size: 20px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+
+
+
+textarea {
+  height: 10em;
+  width: 20em;
+  background-image: url(img/strars2.gif);
+  border-color:#6623ff;
+  color: white;
+  resize: none;
+}
+
+.btn-default {
+  color: #fff;
+  background-color: #211717;
+  border-color: #ccc;
+}
+
+label {
+  font-size:1.5em;
+  color: white;
+}
+
+/* .journal-dream {
+ font-family: 'Indie Flower', cursive;
+ background-color: white;
+ background: repeating-linear-gradient(white, white 25px, #9198e5 26px, #9198e5 27px);
+ height: auto;
+ width: auto;
+ padding: 0;
+ /* margin-top: 50px;
+ margin-left: 15px; */
+ /* color: black;
+} / */
+
+ p {
+  font-family: 'Indie Flower', cursive;
+  background-color: white;
+  background: repeating-linear-gradient(white, white 25px, #9198e5 26px, #9198e5 27px);
+  height: auto;
+  width: auto;
+  padding: 0;
+  color: black;
+
+  /* margin-top: 50px;
+  margin-left: 15px; */
+  
+ }
+
+ h2 { 
+  color: white;
+ }
+ 
+h3 {
+  color: white;
+}
+
+
+
+
+.activeListItem {
+  animation: blinkText 6s infinite !important;
+}
+
+@keyframes blinkBackground {
+    
+  0% {
+      background-color:  rgb(0, 0, 0);
+  }
+
+  20% {
+      background-color: rgb(230, 178, 186);
+  }
+
+  40% {
+      background-color:rgb(187, 0, 255);
+  }
+
+  60% {
+      background-color: steelblue;
+  }
+
+  80% {
+      background-color: greenyellow;
+  }
+
+  100% {
+      background-color: black;
+  }
+}
+
+@-webkit-keyframes blink {
+  0% {
+      background-color: rgb(31, 2, 251);
+  }
+
+  20% {
+      background-color: pink;
+  }
+
+  40% {
+      background-color: rgb(247, 0, 255);
+  }
+
+  60% {
+      background-color: steelblue;
+  }
+
+  80% {
+      background-color: greenyellow;
+  }
+
+  100% {
+      background-color: black;
+  }
+}
+
+
+@keyframes blink {
+  
+  0% {
+      border: 7px solid red;
+      border-radius: 4px;
+  }
+
+  20% {
+      border: 7px solid pink;
+      border-radius: 4px;
+  }
+
+  40% {
+      border: 7px solid yellow;
+      border-radius: 4px;
+  }
+
+  60% {
+      border: 7px solid steelblue;
+      border-radius: 4px;
+  }
+
+  80% {
+      border: 7px solid greenyellow;
+      border-radius: 4px;
+  }
+
+  100% {
+      border: 7px solid red;
+      border-radius: 4px;
+  }
+}
+
+@-webkit-keyframes blink {
+  0% {
+      border: 7px solid red;
+      border-radius: 4px;
+  }
+
+  20% {
+      border: 7px solid pink;
+      border-radius: 4px;
+  }
+
+  40% {
+      border: 7px solid yellow;
+      border-radius: 4px;
+  }
+
+  60% {
+      border: 7px solid steelblue;
+      border-radius: 4px;
+  }
+
+  80% {
+      border: 7px solid greenyellow;
+      border-radius: 4px;
+  }
+
+  100% {
+      border: 7px solid red;
+      border-radius: 4px;
+  }
+}
+
+/* @keyframes blinkText {
+    
+  0% {
+      color:  rgb(102, 97, 247);
+  }
+
+  20% {
+      color: rgb(255, 59, 170);
+  }
+
+  40% {
+      color:rgb(68, 47, 189);
+  }
+
+  60% {
+      color: rgb(40, 182, 243);
+  }
+
+  80% {
+      color: rgb(85, 47, 255);
+  }
+
+  100% {
+      color: rgb(70, 168, 233);
+  }
+} */
+
+@keyframes blinkText {
+    
+  0% {
+      color:  rgb(102, 97, 247);
+  }
+
+  20% {
+      color: rgb(255, 59, 170);
+  }
+
+  40% {
+      color:rgb(68, 47, 189);
+  }
+
+  60% {
+      color: rgb(40, 182, 243);
+  }
+
+  80% {
+      color: rgb(85, 47, 255);
+  }
+
+  100% {
+      color: rgb(70, 168, 233);
+  }
+}

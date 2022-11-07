@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+<head>
+    <title>21 Savage Fan Site</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  
+    <div class="page-header text-center">
+        <h1><span class="fa fa-sharp">✨🌙</span> Sleep Tracker</h1>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+</header>
+
+      <% if (user.local.email) { %>
+        <form action="/messages" method="POST">
+          <!-- <input type="text" value="<%= user.local.email %>" name="name"> -->
+         
+          <div class="formContainer">
+            <h2>Write your dreams! / Hours Slept</h2>
+          <textarea type="text" placeholder="Dream Journal" name="dream"></textarea>
+          
+          <input class="sleepHours" type="number" placeholder="Hours Slept" name="hours" required>
+
+          <h2>What day is it?</h2>
+          <!-- <input class="sleepHours" type="number" placeholder="Hours Slept" name="hours" required> -->
+          <input type="checkbox" value="Monday" name="day">
+            <label for="monday">Monday</label>
+              <input type="checkbox" value="Tuesday" name="day">
+                <label for="tuesday">Tuesday</label>
+              <input type="checkbox" value="Wednesday" name="day">
+                <label for="wednesday">Wednesday</label>
+              <input type="checkbox" value="Thursday" name="day">
+                <label for="thursday">Thursday</label>
+              <input type="checkbox" value="Friday" name="day">
+                <label for="friday">Friday</label>
+              <input type="checkbox" value="Saturday" name="day">
+                <label for="saturday">Saturday</label>
+              <input type="checkbox" value="Sunday" name="day">
+                <label for="friday">Sunday</label>
+          <button type="submit">Submit</button>
+        </div>
+        </form>
+        <div class="row">
+              
+          <div class="col-sm-6 userEntry">
+            <ul class="journalTitle">
+              <li class="entryLog">
+                <h3>Sleep Log/ Dream Journal</h3>
+              </li>
+            </ul>
+            <ul class="messages">
+            <% for(var i=0; i<messages.length; i++) {%>
+              <% const favorited =  messages[i].favorited %>
+              <li class="message <%= favorited == true ? 'activeListItem' : 'unactiveListItem' %>">
+                <span class="hours"><%= messages[i].hours %></span>
+                <span class="day"><%= messages[i].day %></span>
+                <p class="journal-dream"><%= messages[i].dream %></p>
+                <span><i class="fa fa-heart" aria-hidden="true"></i></span>
+                <!-- <span class="hidden"><%= messages[i].thumbDown %></span> 
+                <span class="hidden"><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+                <span class="hidden"><i class="fa fa-thumbs-down" aria-hidden="true"></i></span>  -->
+                <span><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+              
+              </li>
+            
+            <% } %>
+             <div class="container">
+            </ul>
+          
+        <% } %>
+
+        
+        <!-- LOCAL INFORMATION -->
+        <div class="hidden" class="col-sm-6">
+            <div class="well">
+                <h3><span class="fa fa-user"></span> Local</h3>
+
+                <% if (user.local.email) { %>
+                    <p>
+                        <strong>id</strong>: <%= user._id %><br>
+                        <strong>email</strong>: <%= user.local.email %><br>
+                        <strong>password</strong>: <%= user.local.password %>
+                    </p>
+
+                    <a href="/unlink/local" class="btn btn-default">Unlink</a>
+                <% } else { %>
+                    <a href="/connect/local" class="btn btn-default">Connect Local</a>
+                <% } %>
+
+            </div>
+        </div>
+        <!-- <div class="col-sm-6">
+          <ul class="journalTitle">
+            <li class="entryLog">
+              <h3>Sleep Log</h3>
+            </li>
+            <li class="entryJournal">
+              <h3>Dream Journal</h3>
+            </li>
+          </ul>
+          <ul class="messages">
+          <% for(var i=0; i<messages.length; i++) {%>
+            <li class="message">
+              <span class="hours"><%= messages[i].hours + ' hours' %></span>
+              <span class="day"><%= messages[i].day %></span>
+              <span class="journal-dream"><%= messages[i].dream %></span>
+              <span class="hidden"><%= messages[i].thumbUp %></span>  
+              <span class="hidden"><%= messages[i].thumbDown %></span> 
+              <span class="hidden"><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+              <span class="hidden"><i class="fa fa-thumbs-down" aria-hidden="true"></i></span>
+              <span><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+            
+            </li>
+          
+          <% } %>
+          </ul> -->
+<!-- 
+        <% if (user.local.email) { %>
+          <form action="/sleep" method="POST">
+            <!-- <input type="text" value="<%= user.local.email %>" name="name"> 
+            <input type="text" placeholder="Dream Journal" name="day">
+            
+            <h2>Add sleep</h2>
+            <input type="number" placeholder="Hours Slept" name="hours">
+            <input type="checkbox" value="Monday" name="day">
+              <label for="monday">Monday</label>
+                <input type="checkbox" value="Tuesday" name="day">
+                  <label for="tuesday">Tuesday</label>
+                <input type="checkbox" value="Wednesday" name="day">
+                  <label for="wednesday">Wednesday</label>
+                <input type="checkbox" value="Thursday" name="day">
+                  <label for="thursday">Thursday</label>
+                <input type="checkbox" value="Friday" name="day">
+                  <label for="friday">Friday</label>
+                <input type="checkbox" value="Saturday" name="day">
+                  <label for="saturday">Saturday</label>
+                <input type="checkbox" value="Sunday" name="day">
+                  <label for="friday">Sunday</label>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        <% } %> -->
+
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>
