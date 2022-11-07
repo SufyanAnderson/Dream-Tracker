@@ -151,7 +151,7 @@ label {
  /* color: black;
 } / */
 
- p {
+ /* /* p {
   font-family: 'Indie Flower', cursive;
   background-color: white;
   background: repeating-linear-gradient(white, white 25px, #9198e5 26px, #9198e5 27px);
@@ -163,6 +163,16 @@ label {
   /* margin-top: 50px;
   margin-left: 15px; */
   
+
+
+ .journal-dream {
+  font-family: 'Indie Flower', cursive;
+  background-color: white;
+  background: repeating-linear-gradient(white, white 25px, #9198e5 26px, #9198e5 27px);
+  height: auto;
+  width: auto;
+  padding: 0;
+  color: black;
  }
 
  h2 { 
