@@ -67,7 +67,23 @@ module.exports = function(app, passport, db) {
           res.send(result)
         })
       })
+      
+      app.put('/edit', (req, res) => {
   
+        db.collection('messages')
+        .findOneAndUpdate({dream: req.body.originalDream}, {
+          $set: {
+            dream:req.body.newDream 
+          }
+        }, {
+          sort: {_id: -1},
+          upsert: true
+        }, (err, result) => {
+          if (err) return res.send(err)
+          res.send(result)
+        })
+      })
+
   
       app.put('/thumbdown', (req, res) => {
         db.collection('messages')
@@ -89,7 +105,6 @@ module.exports = function(app, passport, db) {
         .findOneAndUpdate({dream: req.body.dream, hours: req.body.hours, day: req.body.day}, {
           $set: {
             favorited: req.body.favorited,
-
           }
         }, {
           sort: {_id: -1},
@@ -99,7 +114,14 @@ module.exports = function(app, passport, db) {
           res.send(result)
         })
       })
-  
+      // app.delete('/messages', (req, res) => {
+      //   console.log('delete')
+        
+      //   db.collection('messages').findOneAndDelete({dream: req.body.dream, day: req.body.day, hours: req.body.hours}, (err, result) => {
+      //     if (err) return res.send(500, err)
+      //     res.send('Message deleted!')
+      //   })
+      // })
   
       app.delete('/messages', (req, res) => {
         console.log('delete')

@@ -2,6 +2,7 @@ var thumbUp = document.getElementsByClassName("fa-thumbs-up");
 var thumbUp = document.getElementsByClassName("fa-thumbs-down");
 var trash = document.getElementsByClassName("fa-trash-o");
 var heart = document.getElementsByClassName("fa-heart");
+var edit = document.getElementsByClassName("edit");
 
 // Array.from(thumbUp).forEach(function(element) {
 //       element.addEventListener('click', function(){
@@ -41,6 +42,30 @@ Array.from(heart).forEach(function(element){
         'day': day,
         'dream':dream,
         'favorited': !favorited
+      })
+    })
+    .then(response => {
+      if (response.ok) return response.json()
+    })
+    .then(data => {
+      console.log(data)
+      window.location.reload(true)
+    })
+  })
+}) 
+
+
+Array.from(edit).forEach(function(element){
+  element.addEventListener('click', function(){
+    const newDream = this.parentNode.childNodes[1].value
+    const originalDream = this.parentNode.parentNode.childNodes[5].innerText
+    // const favorited = this.parentNode.parentNode.classList.contains('activeListItem')
+    fetch('edit', {
+      method: 'put',
+      headers: {'Content-Type' : 'application/json'},
+      body: JSON.stringify({
+      'newDream':newDream,
+      'originalDream': originalDream
       })
     })
     .then(response => {
