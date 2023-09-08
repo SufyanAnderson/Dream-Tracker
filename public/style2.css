@@ -1,0 +1,15 @@
+body {
+    background-image: url(img/cloudsrolling.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.jumbotron {
+    padding: 30px;
+    margin-bottom: 30px;
+    font-size: 21px;
+    font-weight: 200;
+    line-height: 2.1428571435;
+    color: inherit;
+    background-color: #f1f1f100;
+}

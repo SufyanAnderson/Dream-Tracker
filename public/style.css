@@ -63,9 +63,14 @@ body{
   border-radius: 35px;
 }
 
-.jumbotron h1 {
+.jumbotron {
   color: black;
+  height: 100%;
+  width: 100%;
+  background-color: none;
 }
+
+
 
 .messages {
   color: white
